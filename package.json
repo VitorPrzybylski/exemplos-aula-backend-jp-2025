@@ -1,0 +1,15 @@
+{
+  "name": "exemplos-aula-backend-jp-2025",
+  "version": "1.0.0",
+  "description": "Projeto de exemplo Jovem Programador",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitor Henrique Bibow Przybylski",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
