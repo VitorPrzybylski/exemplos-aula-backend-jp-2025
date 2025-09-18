@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "dev": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "author": "Vitor Henrique Bibow Przybylski",
   "license": "ISC",
