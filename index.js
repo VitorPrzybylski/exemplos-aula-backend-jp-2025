@@ -1,7 +1,8 @@
 import express from "express"
-import { exercicio1, exercicio2,exercicio3,exercicio4,exercicio5,exercicio6 } from "./services/exercicio.js";
+import { exercicio1GET, exercicio1POST, exercicio2,exercicio3,exercicio4,exercicio5,exercicio6 } from "./controllers/exercicio.js";
 
 const app = express();
+app.use(express.json())
 
 
 //query params
@@ -15,8 +16,7 @@ app.get('/api/pessoa/:id', (req, res) => {
     res.status(200).send("Hello " + nome)
 })
 
-
-app.get('/exercicio1', exercicio1), 
+app.post('/exercicio1', exercicio1POST), 
 
 
 app.get('/exercicio2', exercicio2)
@@ -29,6 +29,7 @@ app.get('/exercicio4', exercicio4)
 
 
 app.get('/exercicio5', exercicio5)
+
 app.listen(3000, () => {
     console.log("Servidor Rodando na porta 3000")
 })
