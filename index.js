@@ -22,13 +22,13 @@ app.post('/exercicio1', exercicio1POST),
 app.get('/exercicio2', exercicio2)
 
 
-app.get('/exercicio3',exercicio3)
+app.post('/exercicio3',exercicio3)
 
 
-app.get('/exercicio4', exercicio4)
+app.post('/exercicio4', exercicio4)
 
 
-app.get('/exercicio5', exercicio5)
+app.post('/exercicio5', exercicio5)
 
 app.listen(3000, () => {
     console.log("Servidor Rodando na porta 3000")
