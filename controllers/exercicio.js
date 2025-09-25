@@ -1,4 +1,4 @@
-import { salario, somar } from "../services/exercicio.js";
+import {  salario, somar, Media,CelFahren, MilhaKMs } from "../services/exercicio.js";
 
 export const exercicio1GET =(req, res) => {
     let valor1 = Number(req.query.valor1);
@@ -24,24 +24,34 @@ export const exercicio2 = (req, res) => {
     res.send(result)
 }
 export const exercicio3 =  (req, res) => {
-    let pessoa1 = Number(req.query.pessoa1)
-    let pessoa2 = Number(req.query.pessoa2)
-    let pessoa3 = Number(req.query.pessoa3)
-    let pessoa4 = Number(req.query.pessoa4)
-    let pessoa5 = Number(req.query.pessoa5)
-    let Media = pessoa1 + pessoa2 + pessoa3 + pessoa4 + pessoa5
-    res.send("Exercicio 3 " + Media / 5)
+    // const {pessoa1,pessoa2,pessoa3,pessoa4,pessoa5} = req.params
+    // const media = Media(pessoa1,pessoa2,pessoa3,pessoa4,pessoa5)
+    console.log("body aqui",req.body);
+    const { pessoa1, pessoa2, pessoa3, pessoa4, pessoa5 } = req.body
+    // const pessoa1 = req.body.pessoa1;
+    // const pessoa2 = req.body.pessoa2;
+    // const pessoa3 = req.body.pessoa3;
+    // const pessoa4 = req.body.pessoa4;
+    // const pessoa5 = req.body.pessoa5;
+    const media = Media(pessoa1,pessoa2,pessoa3,pessoa4,pessoa5)
+    // const test1 = req.body.test1;
+    // const test2 = req.body.test2;
+    // const resultado =Teste(test1,test2)
+    res.status(200).send({msg:"resultado " +media/5,
+        data:media,
+        error:null
+    })
 }
 export const exercicio4 = (req, res) => {
-    let Celsius = Number(req.query.Celsius)
-    let Fahrenheit = (9 * Celsius + 160) / 5
-    res.send("Exercicio 4 " + Fahrenheit)
+    const {celcius}=req.body
+    const Fahrenheit =CelFahren(celcius)
+    res.status(200).send({msg: "Exercicio 4 "+Fahrenheit/5
+    })
 }
 export const exercicio5 = (req, res) => {
-    let milhas = Number(req.query.milhas)
-    let KMs
-    KMs = milhas * 1.60934
-    res.send("Exercicio 5 " + KMs)
+    const {milhas}=req.body
+    const KMs =MilhaKMs(milhas)
+    res.send({msg:"Exercicio 5 "+KMs})
 }
 export const exercicio6 = (req, res) => {
     let duracao,minutos,segundos,horas
