@@ -81,5 +81,8 @@ export const exercicio4 = (req, res) => {  //criar a funçao para exportar no in
     const Fahrenheit =CelFahren(celcius)    //realizar o calculo ou a funçao que foi importada do services
     res.status(200).send({msg: "Exercicio 4 "+Fahrenheit/5    //mensagem com o resultado
     })
-    
+
 } -->
+
+
+testando o bongo quest
